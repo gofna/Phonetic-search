@@ -3,7 +3,7 @@
 //#include <string>
 #include <iostream>
 using namespace std;
-using namespace phonetic;
+namespace phonetic{
 
 string find(string text, string w){
     size_t found =  text.find(w);
@@ -11,4 +11,5 @@ string find(string text, string w){
         return w;
     }
    return "none";
+}
 }
