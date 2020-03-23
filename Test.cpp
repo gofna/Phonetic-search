@@ -1,3 +1,8 @@
+/**
+ * AUTHORS: <Maor Ovadia and Gofna Ivry>
+ * 
+ * Date: 2020-03
+ */
 
 #include "doctest.h"
 #include "PhoneticFinder.hpp"

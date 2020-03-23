@@ -1,6 +1,11 @@
 
+/**
+ * AUTHORS: <Maor Ovadia and Gofna Ivry>
+ * 
+ * Date: 2020-03
+ */
+
 #include "PhoneticFinder.hpp"
-//#include <string>
 #include <iostream>
 using namespace std;
 namespace phonetic{
@@ -15,7 +20,7 @@ string find(string text, string w){
     }
 
     if(count > w.length()){
-        throw runtime_error("'"+w+"'" + " is not a full word in the sentence");
+        throw runtime_error("'"+w+"'" + " is not a full word in the sentence\n");
     }
     
     if (found != -1){
