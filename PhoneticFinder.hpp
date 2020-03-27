@@ -6,6 +6,7 @@ using namespace std;
 namespace phonetic{
 
 string find(string text, string w);
+bool check(string temp , string word );
 
 }
 

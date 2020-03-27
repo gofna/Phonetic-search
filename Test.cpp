@@ -85,7 +85,7 @@ TEST_CASE("Test replacement of s, S, z, Z") {
     CHECK(find(text, "suZi") == string("Suzi"));
     CHECK(find(text, "ztack") == string("stack"));
     CHECK(find(text, "Stack") == string("stack"));
-    CHECK(find(text, "suzuki") == string("suZki"));
+    CHECK(find(text, "suzuki") == string("suZuki"));
     CHECK(find(text, "zuzuki") == string("suZuki"));
     CHECK(find(text, "ZuZuki") == string("suZuki"));
 }
@@ -112,11 +112,11 @@ TEST_CASE("Test replacement of v, V, w, W") {
 
 TEST_CASE("Test replacement of g, G, j, J") {
     string text = "xxx beginning yyy the city Grajewo";
-    CHECK(find(text, "beginninj") == string("beginnig"));
-    CHECK(find(text, "beGinninG") == string("beginnig"));
-    CHECK(find(text, "bejinninj") == string("beginnig"));
-    CHECK(find(text, "beJinninj") == string("beginnig"));
-    CHECK(find(text, "bejinninG") == string("beginnig"));
+    CHECK(find(text, "beginninj") == string("beginning"));
+    CHECK(find(text, "beGinninG") == string("beginning"));
+    CHECK(find(text, "bejinninj") == string("beginning"));
+    CHECK(find(text, "beJinninj") == string("beginning"));
+    CHECK(find(text, "bejinninG") == string("beginning"));
     CHECK(find(text, "GraJewo") == string("Grajewo"));
     CHECK(find(text, "GraGewo") == string("Grajewo"));
     CHECK(find(text, "jraJewo") == string("Grajewo"));
@@ -125,7 +125,7 @@ TEST_CASE("Test replacement of g, G, j, J") {
 }
 
 TEST_CASE("Test replacement of u, U, o, O") {
-    string text = "you xxx out yyy";
+    string text = "out xxx you yyy";
     CHECK(find(text, "yOU") == string("you"));
     CHECK(find(text, "yoU") == string("you"));
     CHECK(find(text, "yuo") == string("you"));
