@@ -14,11 +14,13 @@ using namespace std;
 namespace phonetic{
 
 string find(string text, string word){
+    if(word == ""){
+        throw runtime_error("Did not find the word '" + word + "' in the text");
+    }
 
     transform(word.begin(), word.end(), word.begin(), ::tolower);
     
-    
-    bool b;
+    bool b = false;
     string ans = ""; // from the text
     string temp; // after tolower
     for (int i = 0 ;i <= text.length() ; i++){
@@ -27,11 +29,10 @@ string find(string text, string word){
                 temp = ans;
                 transform(temp.begin(), temp.end(), temp.begin(), ::tolower);
                 b = check(temp , word);
-                cout << ans << " " << b << " " << word << endl;
                 if(b == true ) return ans;
             }
             ans = "";
-            temp ="";
+            temp = "";
         }
         else{
             ans += text[i];
@@ -46,28 +47,28 @@ bool check(string temp , string word ){
         if (temp[i] == word[i]){
             continue;
         }
-        else if((temp[i] == 'v' || temp[i] == 'w') && (word[i] =  'v' || word[i] == 'w')){
+        else if((temp[i] == 'v' || temp[i] == 'w') && (word[i] == 'v' || word[i] == 'w')){
             continue;
         }
-        else if((temp[i] == 'b' || temp[i] == 'f' || temp[i] == 'p') && (word[i] =  'b' || word[i] == 'f' || word[i] == 'p')){
+        else if((temp[i] == 'b' || temp[i] == 'f' || temp[i] == 'p') && (word[i] ==  'b' || word[i] == 'f' || word[i] == 'p')){
             continue;
         }
-        else if((temp[i] == 'g' || temp[i] == 'j') && (word[i] =  'g' || word[i] == 'j')){
+        else if((temp[i] == 'g' || temp[i] == 'j') && (word[i] == 'g' || word[i] == 'j')){
             continue;
         }        
-        else if((temp[i] == 'c' || temp[i] == 'k' || temp[i] == 'q') && (word[i] =  'c' || word[i] == 'k' || word[i] == 'q')){
+        else if((temp[i] == 'c' || temp[i] == 'k' || temp[i] == 'q') && (word[i] ==  'c' || word[i] == 'k' || word[i] == 'q')){
             continue;
         }
-        else if((temp[i] == 's' || temp[i] == 'z') && (word[i] =  's' || word[i] == 'z')){
+        else if((temp[i] == 's' || temp[i] == 'z') && (word[i] ==  's' || word[i] == 'z')){
             continue;
         }
-        else if((temp[i] == 'd' || temp[i] == 't') && (word[i] =  'd' || word[i] == 't')){
+        else if((temp[i] == 'd' || temp[i] == 't') && (word[i] == 'd' || word[i] == 't')){
             continue;
         } 
-        else if((temp[i] == 'o' || temp[i] == 'u') && (word[i] =  'o' || word[i] == 'u')){
+        else if((temp[i] == 'o' || temp[i] == 'u') && (word[i] == 'o' || word[i] == 'u')){
             continue;
         } 
-        else if((temp[i] == 'i' || temp[i] == 'y') && (word[i] =  'i' || word[i] == 'y')){
+        else if((temp[i] == 'i' || temp[i] == 'y') && (word[i] == 'i' || word[i] == 'y')){
             continue;
         } 
         else{
